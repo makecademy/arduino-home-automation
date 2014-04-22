@@ -1,0 +1,27 @@
+body {
+    font-family: 'Open Sans';
+}
+
+.relayBlock{
+    font-size: 30px;
+    margin: 25px;
+}
+
+.relayTitle {
+    margin-right: 25px;
+    vertical-align: middle;
+}
+
+.mainContainer {
+    width: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 380px) {
+
+	.mainContainer {
+	    width: 360px;
+	}
+}
