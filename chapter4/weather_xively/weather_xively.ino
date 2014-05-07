@@ -77,6 +77,7 @@ void loop(void)
   String data = "";
   data = data + "\n" + "{\"version\":\"1.0.0\",\"datastreams\" : [ {\"id\" : \"Temperature\",\"current_value\" : \"" + String((int)temperature) + "\"}," + "{\"id\" : \"Light\",\"current_value\" : \"" + String(lightLevel) + "\"}," + "{\"id\" : \"Humidity\",\"current_value\" : \"" + String((int)humidity) + "\"}]}";
   Serial.println(data);
+  length = data.length();
   
   // Send request
   Adafruit_CC3000_Client client = cc3000.connectTCP(ip, 80);
