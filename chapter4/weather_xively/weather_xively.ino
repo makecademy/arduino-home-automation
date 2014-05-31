@@ -32,7 +32,7 @@ DHT dht(DHTPIN, DHTTYPE);
 #define API_key  "yourAPIkey"
 #define feedID  "yourFeedID"
 
-uint32_t ip;
+unsigned long ip;
 
 void setup(void)
 {
@@ -64,7 +64,7 @@ void loop(void)
   Serial.println("DHCP OK");
 
   // Set the website IP
-  uint32_t ip = cc3000.IP2U32(216,52,233,120);
+  cc3000.getHostByName(WEBSITE, &ip);
   cc3000.printIPdotsRev(ip);
 
   // Measure data
