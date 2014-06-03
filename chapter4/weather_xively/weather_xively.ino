@@ -24,15 +24,13 @@ DHT dht(DHTPIN, DHTTYPE);
 // WLAN parameters
 #define WLAN_SSID       "yourSSID"
 #define WLAN_PASS       "yourPassword"
-// Security can be WLAN_SEC_UNSEC, WLAN_SEC_WEP, WLAN_SEC_WPA or WLAN_SEC_WPA2
 #define WLAN_SECURITY   WLAN_SEC_WPA2
 
 // Xively parameters
-#define WEBSITE  "api.xively.com"
 #define API_key  "yourAPIkey"
 #define feedID  "yourFeedID"
 
-unsigned long ip;
+uint32_t ip;
 
 void setup(void)
 {
@@ -64,7 +62,7 @@ void loop(void)
   Serial.println("DHCP OK");
 
   // Set the website IP
-  cc3000.getHostByName(WEBSITE, &ip);
+  ip = cc3000.IP2U32(216,52,233,120);
   cc3000.printIPdotsRev(ip);
 
   // Measure data
